@@ -5,12 +5,12 @@ from .models import Snippet
 
 
 class SnippetSerializer(serializers.ModelSerializer):
-    snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Snippet.objects.all())
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Snippet
         fields = ('id',
+                  'owner',
                   'title',
                   'code',
                   'linenos',
@@ -19,10 +19,4 @@ class SnippetSerializer(serializers.ModelSerializer):
                   )
 
 
-class UserSerializer(serializers.ModelSerializer):
-    snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Snippet.objects.all())
-
-    class Meta:
-        model = User
-        fields = ('id', 'username', 'snippets')
 
