@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from snippets.views.cbv_viewsets_explicitly import SnippetViewSet
 
 router = DefaultRouter()
-router.register(r'snippets', SnippetViewSet)
+router.register(r'', SnippetViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
