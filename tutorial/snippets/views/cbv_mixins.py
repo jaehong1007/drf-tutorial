@@ -4,6 +4,8 @@ from rest_framework import mixins, generics
 from snippets.models import Snippet
 from ..serializers import SnippetSerializer
 
+# genericapiview를 사용, mixin함수를 참조
+
 
 class SnippetList(mixins.ListModelMixin,
                   mixins.CreateModelMixin,

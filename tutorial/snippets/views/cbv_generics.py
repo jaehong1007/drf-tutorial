@@ -3,6 +3,8 @@ from snippets.permission import IsOwnerOrReadOnly
 from snippets.serializers import SnippetSerializer
 from rest_framework import generics, permissions
 
+# generics view를 사용
+
 
 class SnippetList(generics.ListCreateAPIView):
     queryset = Snippet.objects.all()
